@@ -6,64 +6,163 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url('https://images.unsplash.com/photo-1444124818704-4d89a495bbae?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90byw') no-repeat center center fixed;
     background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     font-family: 'Arial', sans-serif;
+    transition: background 0.3s ease;
 }
 
-/* Floating timer container */
+/* Timer container */
 .timer-container {
     text-align: center;
-    background: rgba(255, 255, 255, 0); /* Fully transparent background */
-    backdrop-filter: none; /* Remove backdrop filter for a clean look */
-    padding: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    transition: all 0.3s ease;
 }
 
 /* Timer display */
 .timer {
     font-size: 8rem;
-    font-weight: bold;
+    font-weight: 700;
     color: white;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* Stronger shadow for readability */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    letter-spacing: 5px;
+    padding: 10px;
+    border-radius: 15px;
 }
 
-/* Button group for timer modes */
-.timer-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-/* Button styles for timer modes */
-.button {
-    padding: 10px 20px;
-    background-color: rgba(255, 255, 255, 0.2); /* Light transparent background */
-    border: 2px solid rgba(255, 255, 255, 0.3);
+/* Button styling */
+.control-button {
+    padding: 15px 30px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.4);
     border-radius: 30px;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: white;
     cursor: pointer;
     transition: all 0.3s ease;
+    margin: 0 10px;
 }
 
-.button:hover {
-    background-color: rgba(255, 255, 255, 0.4); /* Slight hover effect */
+.control-button:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Timer control buttons (start, reset, settings) */
-.timer-controls {
+.control-button:active {
+    transform: scale(0.98);
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    right: -300px;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    transition: right 0.3s ease;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.sidebar.open {
+    right: 0;
+}
+
+/* Sidebar content */
+.sidebar-content h2 {
+    margin-bottom: 20px;
+}
+
+.sidebar-content .form-control {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #ffbb00;
+    color: black;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #ffa500;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+}
+
+.hamburger.is-active .bar {
+    transform: rotate(45deg);
+    background-color: #ffa500;
+}
+
+/* Input Group */
+.input-group {
+    margin-bottom: 15px;
+}
+
+
+/* update */
+/* General body styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
     display: flex;
     justify-content: center;
-    gap: 10px;
+    align-items: center;
+    background-size: cover;
+    font-family: 'Arial', sans-serif;
 }
 
-/* Control button styles */
+/* Timer container */
+.timer-container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.2);
+    width: 500px;
+}
+
+/* Timer display */
+.timer {
+    font-size: 8rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* Button styling */
 .control-button {
-    padding: 10px 20px;
+    padding: 15px 30px;
     background-color: rgba(255, 255, 255, 0.2);
-    border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 30px;
     font-size: 1.5rem;
     color: white;
@@ -75,14 +174,192 @@ body, html {
     background-color: rgba(255, 255, 255, 0.4);
 }
 
-/* Timer display with lo-fi aesthetic */
-.timer {
-    font-size: 10rem; /* Large and bold font */
-    font-weight: 800;
-    color:white; /* Soft pale yellow for a warm, lo-fi look */
+.control-button:active {
+    transform: scale(0.98);
+}
+
+/* Settings icon (hamburger) */
+.settings-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.menu-bar {
+    width: 35px;
+    height: 4px;
+    background-color: white;
+    margin: 6px 0;
+}
+
+/* Settings Sidebar */
+.settings-sidebar {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: rgba(17, 16, 16, 0.8);
+    padding: 20px;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.settings-sidebar h2 {
+    color: white;
+}
+
+.settings-section {
     margin-bottom: 20px;
-    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7); /* Strong shadow for depth */
-    letter-spacing: 5px; /* Adds spacing between the numbers */
-    border-radius: 15px; /* Gives the timer rounded corners */
-    padding: 10px;
-    /* background-color: rgba(255, 255, 255, 0.2) */
+}
+
+.settings-divider {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    margin: 10px 0;
+}
+
+.settings-sidebar .form-control,
+.settings-sidebar .btn {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.settings-sidebar .btn {
+    background-color: #FFBF00;
+    color: black;
+}
+
+/* Show sidebar */
+.settings-sidebar.show {
+    right: 0;
+}
+
+/* Sidebar container */
+#settingsSidebar {
+    position: fixed;
+    right: -250px; /* Start off-screen */
+    top: 0;
+    height: 100%;
+    width: 250px;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 20px;
+    z-index: 1000;
+    transition: right 0.3s ease-in-out; /* Smooth transition */
+}
+
+#settingsSidebar.show {
+    right: 0; /* Bring it into view */
+}
+
+/* Sidebar container */
+#settingsSidebar {
+    position: fixed;
+    right: -250px; /* Start off-screen */
+    top: 0;
+    height: 100%;
+    width: 250px;
+    background-color: rgba(46, 45, 45, 0.9);
+    color: white;
+    padding: 20px;
+    z-index: 1000;
+    transition: right 0.3s ease-in-out;
+}
+
+#settingsSidebar.show {
+    right: 0; /* Bring it into view */
+}
+
+/* Close button styling */
+#closeSidebar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    z-index: 1001;
+    background-color: transparent;
+    border: none;
+}
+
+#closeSidebar:hover {
+    color: #f0f0f0;
+}
+
+/* For hamburger icon and layout */
+#settingsIcon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    z-index: 1001;
+    font-size: 24px;
+}
+
+#settingsIcon:hover {
+    color: #090808;
+}
+
+/* Hamburger menu styling */
+.settings-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menu-bar {
+    width: 35px;
+    height: 4px;
+    background-color: white;
+    margin: 6px 0;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for hamburger icon */
+.settings-icon:hover .menu-bar {
+    background-color: red; /* Changes the color to red on hover */
+}
+
+/* Close button styling */
+.close-sidebar-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.close-sidebar-btn:hover {
+    opacity: 0.8;
+}
+
+.control-button {
+    font-size: 1.5rem;
+    padding: 10px 30px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+    outline: none; /* Removes blue focus outline */
+}
+
+.control-button:focus {
+    outline: none; /* Ensures no outline on focus */
+}
+
+.control-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+}

@@ -3,27 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Floating Timer</title>
+    <title>Professional Timer</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
 
-    <!-- Timer container in the middle of the screen -->
+    <!-- Timer Container -->
     <div class="timer-container">
-        <div class="timer-buttons">
-            <button class="button">pomodoro</button>
-            <button class="button">short break</button>
-            <button class="button">long break</button>
+        <div id="timerDisplay" class="timer">25:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="control-button">Start</button>
+            <button id="resetBtn" class="control-button">Reset</button>
+        </div>
+    </div>
+
+    <!-- Hamburger Menu for Settings -->
+    <div id="settingsIcon" class="settings-icon">
+        <div class="menu-bar"></div>
+        <div class="menu-bar"></div>
+        <div class="menu-bar"></div>
+    </div>
+
+    <!-- Sidebar -->
+    <div id="settingsSidebar" class="settings-sidebar">
+        <!-- Close Button -->
+        <button id="closeSidebar" class="close-sidebar-btn">&times;</button>
+        
+        <h2>Settings</h2>
+
+        <!-- Theme Section -->
+        <div class="settings-section">
+            <label for="themeSelect">Select Theme:</label>
+            <select class="form-control" id="themeSelect">
+                <option value="default">Default</option>
+                <option value="forest">Forest</option>
+                <option value="mountain">Mountain</option>
+                <option value="sunset">Sunset</option>
+                <option value="river">River</option>
+            </select>
+            <button id="saveTheme" class="btn btn-warning">Save Theme</button>
         </div>
 
-        <!-- Timer Display -->
-        <div id="timerDisplay" class="timer">25:00</div>
+        <!-- Divider Line -->
+        <hr class="settings-divider">
 
-        <!-- Start and reset buttons -->
-        <div class="timer-controls">
-            <button id="startBtn" class="control-button">start</button>
-            <button id="resetBtn" class="control-button">reset</button>
-            <!-- <button id="settingsBtn" class="control-button">⚙️</button> -->
+        <!-- Custom Timer Section -->
+        <div class="settings-section">
+            <h5>Set Custom Time</h5>
+            <div class="form-group">
+                <label for="customMinutes">Minutes:</label>
+                <input type="number" class="form-control" id="customMinutes" value="25">
+            </div>
+            <div class="form-group">
+                <label for="customSeconds">Seconds:</label>
+                <input type="number" class="form-control" id="customSeconds" value="0">
+            </div>
+            <button id="saveCustomTime" class="btn btn-warning">Save Time</button>
         </div>
     </div>
 
