@@ -1,0 +1,88 @@
+/* General body styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('https://images.unsplash.com/photo-1444124818704-4d89a495bbae?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90byw') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Floating timer container */
+.timer-container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0); /* Fully transparent background */
+    backdrop-filter: none; /* Remove backdrop filter for a clean look */
+    padding: 20px;
+}
+
+/* Timer display */
+.timer {
+    font-size: 8rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* Stronger shadow for readability */
+}
+
+/* Button group for timer modes */
+.timer-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Button styles for timer modes */
+.button {
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.2); /* Light transparent background */
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background-color: rgba(255, 255, 255, 0.4); /* Slight hover effect */
+}
+
+/* Timer control buttons (start, reset, settings) */
+.timer-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Control button styles */
+.control-button {
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.control-button:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Timer display with lo-fi aesthetic */
+.timer {
+    font-size: 10rem; /* Large and bold font */
+    font-weight: 800;
+    color:white; /* Soft pale yellow for a warm, lo-fi look */
+    margin-bottom: 20px;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7); /* Strong shadow for depth */
+    letter-spacing: 5px; /* Adds spacing between the numbers */
+    border-radius: 15px; /* Gives the timer rounded corners */
+    padding: 10px;
+    /* background-color: rgba(255, 255, 255, 0.2) */
