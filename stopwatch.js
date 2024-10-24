@@ -1,5 +1,5 @@
-// Stopwatch variables
-let stopwatchTime = 0; // Time in milliseconds
+let stopwatchStartTime = 0; // Start time in milliseconds
+let elapsedTime = 0; // Elapsed time in milliseconds
 let stopwatchInterval = null;
 let isStopwatchRunning = false;
 
@@ -12,34 +12,44 @@ const resetStopwatchBtn = document.getElementById('resetStopwatchBtn');
 // Start stopwatch
 startStopwatchBtn.addEventListener('click', () => {
     if (!isStopwatchRunning) {
-        stopwatchInterval = setInterval(updateStopwatchDisplay, 10); // Update every 10ms
+        stopwatchStartTime = performance.now() - elapsedTime; // Adjust the start time based on elapsed time
         isStopwatchRunning = true;
+        stopwatchInterval = requestAnimationFrame(updateStopwatchDisplay); // Start the animation frame
     }
 });
 
 // Stop stopwatch
 stopStopwatchBtn.addEventListener('click', () => {
-    clearInterval(stopwatchInterval);
-    isStopwatchRunning = false;
+    if (isStopwatchRunning) {
+        cancelAnimationFrame(stopwatchInterval); // Stop the requestAnimationFrame
+        isStopwatchRunning = false;
+    }
 });
 
 // Reset stopwatch
 resetStopwatchBtn.addEventListener('click', () => {
-    clearInterval(stopwatchInterval);
-    stopwatchTime = 0;
+    cancelAnimationFrame(stopwatchInterval); // Stop the animation frame
     isStopwatchRunning = false;
-    updateStopwatchDisplay();
+    elapsedTime = 0; // Reset elapsed time to zero
+    stopwatchStartTime = performance.now(); // Reset start time as well to ensure it doesn't affect future runs
+    updateStopwatchDisplay(0); // Immediately reset the display to 00:00:00:00
 });
 
 // Update stopwatch display
 function updateStopwatchDisplay() {
-    stopwatchTime += 10; // Increase time by 10ms
-    const hours = Math.floor(stopwatchTime / (1000 * 60 * 60));
-    const minutes = Math.floor((stopwatchTime % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((stopwatchTime % (1000 * 60)) / 1000);
-    const milliseconds = Math.floor((stopwatchTime % 1000) / 10);
+    elapsedTime = performance.now() - stopwatchStartTime; // Calculate elapsed time
+
+    const hours = Math.floor(elapsedTime / (1000 * 60 * 60));
+    const minutes = Math.floor((elapsedTime % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((elapsedTime % (1000 * 60)) / 1000);
+    const milliseconds = Math.floor((elapsedTime % 1000) / 10);
     
-    stopwatchDisplay.textContent = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    // Update the display with the formatted time
+    stopwatchDisplay.textContent = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}:${String(milliseconds).padStart(2, '0')}`;
+
+    if (isStopwatchRunning) {
+        stopwatchInterval = requestAnimationFrame(updateStopwatchDisplay); // Keep updating if running
+    }
 }
 
 // Theme handling (same as in the timer page)
