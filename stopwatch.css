@@ -1,0 +1,211 @@
+/* General styling for the body */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Arial', sans-serif;
+    transition: background 0.3s ease;
+}
+
+/* Timer/Stopwatch Container */
+.timer-container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 60px;
+    box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    max-height: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Timer/Stopwatch display */
+.timer, .stopwatch {
+    font-family: 'Arial', sans-serif; /* Font consistency */
+    font-size: 8rem; /* Ensure the font size matches */
+    font-weight: 700; /* Same bold weight */
+    color: white;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Consistent shadow effect */
+    letter-spacing: 5px; /* Same spacing between numbers */
+    padding: 10px;
+    border-radius: 15px;
+    width: 100%; /* Fixed width */
+    text-align: center;
+    margin: 0 auto; /* Center the display */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Timer buttons */
+.timer-controls {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 40px;
+    width: 80%; /* Limit the width */
+    margin: 0 auto; /* Center the buttons */
+}
+
+/* Button styles */
+.control-button {
+    padding: 15px 30px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0 10px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    outline: none; /* Remove default browser outline */
+}
+
+/* Hover effect */
+.control-button:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Active button effect */
+.control-button:active {
+    transform: scale(0.98);
+}
+
+/* Remove blue highlight when the button is focused */
+.control-button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Settings Icon (Hamburger menu) */
+#settingsIcon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 40px;
+    width: 40px;
+    background-color: transparent;
+    padding: 5px;
+}
+
+/* Hamburger bars */
+.menu-bar {
+    width: 100%;   /* Full width */
+    height: 4px;   /* Bar thickness */
+    background-color: white;  /* Make the bars visible */
+    margin: 4px 0;  /* Space between the bars */
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for settings icon */
+#settingsIcon:hover .menu-bar {
+    background-color: #e1421b; /* Hover color change */
+}
+
+/* Sidebar styles */
+.settings-sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 20px;
+    z-index: 1000;
+    transition: right 0.3s ease-in-out;
+}
+
+/* Sidebar visible state */
+.settings-sidebar.show {
+    right: 0;
+}
+
+/* Close button for sidebar */
+.close-sidebar-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Heading styles */
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+/* Form control (dropdown and input styles) */
+.form-control {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+/* Button styles in the sidebar */
+.btn-warning {
+    background-color: #ffbb00;
+    border: none;
+    color: black;
+    padding: 10px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Navigation section for Timer/Stopwatch */
+.go-to-stopwatch-section {
+    margin-top: 40px;
+    text-align: center;
+}
+
+/* Styling for the navigation section heading */
+.go-to-stopwatch-section h3 {
+    font-size: 1.5rem;
+    color: white;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    border-top: 2px solid rgba(255, 255, 255, 0.4); /* Line on top of the text */
+    padding-top: 10px; /* Padding to separate text from the line */
+    text-align: center;
+}
+
+/* Navigation button styling */
+.stopwatch-nav-btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 15px 30px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Hover effect for navigation button */
+.stopwatch-nav-btn:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}

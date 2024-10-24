@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+    <link rel="stylesheet" href="stopwatch.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Stopwatch Container -->
+    <div class="timer-container">
+        <div id="stopwatchDisplay" class="timer">00:00:00</div>
+        <div class="timer-controls">
+            <button id="startStopwatchBtn" class="control-button">Start</button>
+            <button id="stopStopwatchBtn" class="control-button">Stop</button>
+            <button id="resetStopwatchBtn" class="control-button">Reset</button>
+        </div>
+
+        <!-- Settings Icon in Top Right Corner -->
+        <div id="settingsIcon" class="settings-icon">
+            <div class="menu-bar"></div>
+            <div class="menu-bar"></div>
+            <div class="menu-bar"></div>
+        </div>
+    </div>
+
+    <!-- Sidebar for Stopwatch -->
+    <div id="settingsSidebar" class="settings-sidebar">
+        <button id="closeSidebar" class="close-sidebar-btn">&times;</button>
+        <h2>Settings</h2>
+        
+        <label for="themeSelect">Select Theme:</label>
+        <select class="form-control" id="themeSelect">
+            <option value="default">Default</option>
+            <option value="forest">Forest</option>
+            <option value="mountain">Mountain</option>
+            <option value="sunset">Sunset</option>
+            <option value="river">River</option>
+        </select>
+        <button id="saveTheme" class="btn btn-warning">Save Theme</button>
+
+        <!-- Navigation Section (no custom time needed) -->
+        <div class="go-to-stopwatch-section">
+            <h3>Navigation to Timer</h3>
+            <a href="index.html" class="stopwatch-nav-btn">Go to Timer</a>
+        </div>
+    </div>
+
+
+    <script src="stopwatch.js"></script>
+</body>
+</html>

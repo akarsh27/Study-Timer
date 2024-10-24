@@ -422,3 +422,229 @@ body, html {
     justify-content: center;
     align-items: center;
 }
+
+/* stopwatch */
+.link-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.link-container a {
+    text-decoration: none;
+    padding: 15px 30px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.link-container a:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+
+/* General styling for the body */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Arial', sans-serif;
+    transition: background 0.3s ease;
+}
+
+/* Increase the size of the timer container */
+.timer-container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 70px;  /* Increased padding */
+    box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.2);
+    max-width: 800px;  /* Larger width */
+    max-height: 450px; /* Larger height */
+    position: relative;
+}
+
+
+/* Timer display */
+.timer {
+    font-size: 9rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    letter-spacing: 5px;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+/* Position the settings icon in the top-right corner */
+#settingsIcon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 40px;  /* Increased height */
+    width: 40px;   /* Increased width */
+    background-color: transparent;
+    padding: 5px;
+}
+
+/* Styles for the three hamburger bars */
+.menu-bar {
+    width: 100%;   /* Make the bars full width */
+    height: 4px;   /* Bar thickness */
+    background-color: white;  /* Make the bars visible */
+    margin: 4px 0;  /* Space between the bars */
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+#settingsIcon:hover .menu-bar {
+    background-color: #eb1313;
+}
+
+/* Timer buttons */
+.timer-controls {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.control-button {
+    padding: 15px 30px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0 20px;  /* Increase space between buttons */
+    border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.control-button:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.control-button:active {
+    transform: scale(0.98);
+}
+
+/* Sidebar styles */
+.settings-sidebar {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 20px;
+    z-index: 1000;
+    transition: right 0.3s ease-in-out;
+}
+
+.settings-sidebar.show {
+    right: 0;
+}
+
+.close-sidebar-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Ensure the timer container matches the stopwatch container */
+.timer-container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 60px;  /* Padding consistent with the stopwatch */
+    box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.2);
+    max-width: 900px;  /* Uniform width to match the stopwatch */
+    max-height: 450px; /* Uniform height */
+    position: relative;
+}
+
+/* Timer display - ensure it's consistent with the stopwatch timer */
+.timer {
+    font-size: 8rem;  /* Make the font size similar to stopwatch */
+    font-weight: 700;
+    color: white;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    letter-spacing: 5px;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+/* Styling for the settings sidebar */
+.settings-sidebar {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 300px;  /* Increased width for better spacing */
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 20px;
+    z-index: 1000;
+    transition: right 0.3s ease-in-out;
+}
+
+/* Section for the 'Go to Stopwatch' button */
+.go-to-stopwatch-section {
+    margin-top: 40px;  /* Create space between the button and other content */
+    text-align: center;
+}
+
+/* Styling for the 'Go to Stopwatch' button */
+.stopwatch-nav-btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 15px 30px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 30px;  /* Rounded corners for modern look */
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+    width: 100%;  /* Full width to fit better */
+    margin-top: 20px;
+}
+
+/* Hover effect for better interaction */
+.stopwatch-nav-btn:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Close button for the sidebar */
+.close-sidebar-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
