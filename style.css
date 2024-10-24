@@ -648,3 +648,51 @@ body, html {
     color: white;
     cursor: pointer;
 }
+
+/* Mobile-Specific Optimizations for Timer */
+@media (max-width: 768px) {
+    .timer-container {
+        max-width: 90%;
+        padding: 20px;
+        margin: 0 auto;
+    }
+
+    .timer {
+        font-size: 4rem; /* Reduce font size for mobile */
+    }
+
+    #settingsIcon {
+        height: 30px;
+        width: 30px;
+    }
+
+    .control-button {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+    }
+
+    .timer-controls {
+        flex-direction: column; /* Stack buttons vertically */
+        margin-top: 20px;
+    }
+
+    .control-button {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .timer {
+        font-size: 3.5rem; /* Further reduce font size for small screens */
+    }
+
+    #settingsIcon {
+        height: 25px;
+        width: 25px;
+    }
+
+    .control-button {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+}
