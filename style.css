@@ -363,3 +363,62 @@ body, html {
     background-color: rgba(255, 255, 255, 0.2);
     border-color: rgba(255, 255, 255, 0.3);
 }
+
+#settingsIcon {
+    position: relative; /* Change from absolute to relative since it's now inside the timer container */
+    top: 0;
+    right: 0;
+    display: inline-block; /* So that it behaves like a button next to others */
+    cursor: pointer;
+    font-size: 24px;
+    margin-left: 15px; /* Add spacing between the reset button and the icon */
+}
+
+.menu-bar {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+#settingsIcon {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column; /* Stack the bars vertically */
+    justify-content: space-between;
+    align-items: center; /* Center the bars */
+    height: 30px; /* Adjust height for proper spacing */
+    width: 35px; /* Width of the icon */
+    background-color: transparent; /* Remove background color */
+    padding: 5px;
+    visibility: visible;
+}
+
+.menu-bar {
+    width: 45px; /* Set the width of the bars */
+    height: 10px;
+    background-color: white; /* Ensure the bars are visible */
+    margin: 3px 5px; /* Space between the bars */
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for the settings icon */
+#settingsIcon:hover .menu-bar {
+    background-color: #e41013; /* Highlight the bars on hover */
+}
+.timer-controls {
+    display: flex;
+    justify-content: space-between; /* Space the buttons equally */
+    align-items: center;
+    margin-top: 20px;
+}
+
+.control-button, #settingsIcon {
+    flex: 1; /* Make sure each element takes up equal space */
+    max-width: 120px; /* Keep the buttons at a consistent size */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
